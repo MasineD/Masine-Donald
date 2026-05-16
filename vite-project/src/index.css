@@ -38,3 +38,104 @@
     font-family: "Playfair Display", serif;
   }
 }
+@layer components{
+  .glow-text{
+    text-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 50%, transparent);
+  }
+  .glow-border{
+    box-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 50%, transparent)
+  }
+  .timeline-glow{
+    box-shadow: 0 0 40px color-mix(in srgb, var(--color-primary) 35%, transparent), 0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent)
+  }
+}
+@layer utilities{
+  /* Fade-in animation */
+  @keyframes fade-in {
+    from{
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(10px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+  /* Slow drift animation */
+  @keyframes slow-drift {
+    0%,
+    100%{
+      transform: translate(0,0);
+    }
+    25%{
+      transform: translate(20px,-30px);
+    }
+    50%{
+      transform: translate(-15px,-20px);
+    }
+    75%{
+      transform: translate(30px, 10px);
+    }
+  }
+  /* Floating animation */
+  @keyframes float {
+    0%,
+    100%{
+      transform: translateY(0);
+    }
+    50%{
+      transform: translateY(-10px);
+    }
+  }
+  /* Marque animation */
+  @keyframes marque{
+    0%{
+      transform: translateX(0);
+    }
+    100%{
+      transform: translateX(-50%);
+    }
+  }
+  .animate-fade-in{
+    animation: fade-in 0.4s ease-out both
+  }
+  .animate-float{
+    animation: float 4s ease-in-out infinite;
+  }
+  .animate-marque{
+    animation: marque 30s linear infinite;
+  }
+  .animation-delay-100{
+    animation-delay: 100ms;
+  }
+  .animation-delay-200{
+    animation-delay: 200ms;
+  }
+  .animation-delay-300{
+    animation-delay: 300ms;
+  }
+  .animation-delay-400{
+    animation-delay: 400ms;
+  }
+  .animation-delay-500{
+    animation-delay: 500ms;
+  }
+  .animation-delay-600{
+    animation-delay: 600ms;
+  }
+  .animation-delay-700{
+    animation-delay: 700ms;
+  }
+}
+
+.navLink{
+  @apply px-4 py-2 text-sm text-muted-foreground hover:text-highlight rounded-full hover:bg-surface hover:scale-105
+}
+section{
+  @apply px-8
+}
+.intro{
+  @apply text-[25px]
+}

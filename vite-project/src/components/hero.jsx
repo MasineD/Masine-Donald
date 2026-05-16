@@ -1,9 +1,169 @@
 import React from 'react'
+import '../index.css'
+import { Phone, Download, FileCode, Braces, Database, Code2 } from 'lucide-react'
+import { FaGithub, FaLinkedin, FaWhatsapp, FaReact, FaNodeJs} from 'react-icons/fa'
+import { SiHtml5, SiTailwindcss, SiJavascript, SiExpress, SiPostgresql, SiVitest, SiPostman, SiPython } from 'react-icons/si'
+import { Link } from 'react-router-dom'
 
 const Hero = () => {
+  const socials = [
+    {icon: FaGithub, to: 'https://github.com/MasineD'},
+  {icon: FaLinkedin, to: 'https://www.linkedin.com/in/donald-masine-17a430270/'},
+  {icon: FaWhatsapp, to: 'https://wa.me/27647266704'},
+  ]
+
+  const skills = [
+    {
+      icon: SiHtml5,
+      label: 'HTML'
+    },
+    {
+      icon: Code2,
+      label: 'CSS'
+    },
+    {
+      icon: SiJavascript,
+      label: 'JavaScript'
+    },
+    {
+      icon: SiTailwindcss,
+      label: 'TailwindCSS'
+    },
+    {
+      icon: FaNodeJs,
+      label: 'Node.js'
+    },
+    {
+      icon: SiExpress,
+      label: 'Express.js'
+    },
+    {
+      icon: SiPostgresql,
+      label: 'PostgreSQL'
+    },
+    {
+      icon: Database,
+      label: 'MS SQL Server'
+    },
+    {
+      icon: SiVitest,
+      label: 'Vitest'
+    },
+    {
+      icon: SiPostman,
+      label: 'Postman'
+    },
+    {
+      icon: SiPython,
+      label: 'Python'
+    }
+  ]
   return (
-    <section>
-        Hero section
+    <section className='relative min-h-[80vh] flex items-center overflow-hidden'>
+        {/* Background */}
+        <div className="absolute inset-0 bg-transparent">
+          {/* <img /> Animate the background */}
+        </div>
+
+        {/* Animation dots */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(30)].map((_, i) => (
+            <div key={i} className="absolute w-1.5 h-1.5 rounded-full opacity-60"
+              style={{
+                backgroundColor: "#00ffff",
+                left : `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animation: `slow-drift ${
+                  15 + Math.random() * 20
+                }s ease-in-out infinite`,
+                animationDelay: `${Math.random() * 5}s`
+              }}
+            />
+        ))}
+        </div>
+
+        {/* Main content */}
+        <div className="container mx-auto px-6 pt-1 pb-2 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left column */}
+            <div className=" space-y-8">
+              <div className=" flex animate-fade-in bg-surface rounded-full items-center justify-center">
+                <span className='inline-flex items-center gap-2 px-4 py-2 rounded-full'>
+                  <span className='w-2 h-2 bg-primary rounded-full animate-pulse'/>
+                  Software Developer
+                </span>
+              </div>
+
+              {/* Headline */}
+              <div className=" space-y-4">
+                <h1 className='text-5xl md:text-6xl lg:text-7xl folt-bold animate-fade-in animation-delay-100'>
+                  Crafting quality,
+                  <br />
+                    <span className='text-primary glow-text'>modern software</span>
+                  <br />
+                  <span className='font-serif italic font-normal text-white'>
+                    applications.
+                  </span> 
+                </h1>
+                <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
+                  Hi, I'm <span className='intro'>Masine Donald</span> - a graduate software developer skilled in
+                  JavaScript, Node.js, Express.js, React, Tailwindcss, and PostgreSQL. I 
+                  build modern and interactive software applications for fun with <span className='intro text-primary glow-text'>0 - 1 </span>years of experience.
+                </p>
+              </div>
+              {/* Call to action buttons*/}
+              <div className="flex gap-4 animate-fade-in animation-delay-300">
+                <button className='flex item-center justify-center gap-2 rounded-full py-2 px-4 bg-[#00ffff] cursor-pointer'><Phone />Contact Me</button>
+                <button className='flex item-center justify-center gap-2 rounded-full py-2 px-4 cursor-pointer border border-[#00ffff]'>
+                  {/* TODO: Animate the border */}
+                  <Download />Download CV
+                </button>
+              </div>
+              {/* Social media accounts */}
+              <div className="flex items-center gap-9 animate-fade-in animation-delay-400">
+                <span className='text-sm text-muted-foreground'>Follow me on:</span>
+                {socials.map((social, index)=>(
+                  <Link key={index} to={social.to} target='_blank'
+                    className='p-2 rounded-full hover:bg-primary/10 hover:scale-105 hover:text-highlight transition-all duration-300'>
+                    {< social.icon size={30}/>}
+                  </Link>
+                ))}
+              </div>
+            </div>
+            {/* Right column */}
+            <div className="relative animate-fade-in animation-delay-300">
+              {/* Profile Image */}
+              <div className="relative max-w-md mx-auto ">
+                <div className='absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse'/>
+                <div className="relative rounded-3xl glow-border">
+                  <img src="../images/profile.png" alt="Masine Donald" className='w-full aspect-[4/5] object-cover rounded-2xl'/>
+                  {/* Badges */}
+                  <div className="absolute -bottom-6 -right-4 rounded-xl px-4 py-3 animate-float border border-primary bg-background">
+                    <div className="flex items-center gap-3">
+                      <span className='text-sm text-[#00ff00] italic font-medium'>Open To Work</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Skills section 
+          TODO: Replace the text with icons*/}
+          <div className='mt-20 animate-fade-in animation-delay-600'>
+            <p className='text-md text-muted-foreground mb-6 text-center'>Skills, Technologies, and Frameworks</p>
+            <div className='relative overflow-hidden'>
+              <div className='flex animate-marque'>
+                {[...skills, ...skills].map((skill, index)=>(
+                  <div key={index} className='flex-shrink-0 px-8 py-4 hover:scale-110'>
+                    <span className='text-2xl font-semibold text-muted-foreground hover:text-white transition-all duration-300'>{< skill.icon />}</span>
+                    <p className='text-sm text-center text-muted-foreground'>{skill.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
     </section>
   )
 }
