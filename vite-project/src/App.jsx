@@ -14,11 +14,6 @@ const App = () => {
       <Navbar />
       {/* Add padding-top to push content below fixed navbar */}
       <main className="pt-32"> {/* Adjust pt-32 based on navbar height */}
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Contact />
         <Routes>
           <Route path='/' element={<Hero />} />
           <Route path='/about' element={<About />} />

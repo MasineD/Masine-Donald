@@ -2,14 +2,64 @@ import React from 'react'
 import '../index.css'
 import { Phone, Download, FileCode, Braces, Database, Code2 } from 'lucide-react'
 import { FaGithub, FaLinkedin, FaWhatsapp, FaReact, FaNodeJs} from 'react-icons/fa'
-import { SiHtml5, SiTailwindcss, SiJavascript, SiExpress, SiPostgresql, SiVitest, SiPostman, SiPython } from 'react-icons/si'
+import { SiHtml5, SiTailwindcss, SiJavascript, SiExpress, SiPostgresql, SiVitest, SiPostman, SiPython, SiCplusplus } from 'react-icons/si'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import About from './about'
+import Experience from './experience'
+import Projects from './projects'
+import Contact from './contact'
+import Footer from './footer'
+
 
 const Hero = () => {
+  const [activeSection, setActiveSection] = React.useState('home');
+
+  const sections = [
+    { id: 'home', name: 'Home', hash: '#home' },
+    { id: 'about', name: 'About', hash: '#about' },
+    { id: 'experiences', name: 'Experiences', hash: '#experiences' },
+    { id: 'projects', name: 'Projects', hash: '#projects' },
+    { id: 'contact', name: 'Contact', hash: '#contact' }
+  ]
+
+  // Scroll to section function
+  const scrollToSection = (id, hash) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      // Update URL hash without triggering scroll
+      window.history.pushState(null, '', hash);
+      setActiveSection(id);
+    }
+  };
+
+  // Download CV function
+  const handleDownloadCV = () => {
+    try {
+      // Create a link to the CV file in the same folder as Hero.jsx
+      const cvPath = 'http://localhost:5173/DonaldMasine-CurriculumVitae.pdf';
+      
+      // Create an anchor element
+      const link = document.createElement('a');
+      link.href = cvPath;
+      link.download = 'DonaldMasine-CurriculumVitae.pdf'; // This forces download with this filename
+      
+      // Append to body, click, and remove
+      document.body.appendChild(link);
+      link.click();
+      link.remove()
+      // document.body.removeChild(link);
+    } catch (error) {
+      console.error('Error downloading CV:', error);
+    }
+  };
+
+  const navigate = useNavigate();
   const socials = [
     {icon: FaGithub, to: 'https://github.com/MasineD'},
-  {icon: FaLinkedin, to: 'https://www.linkedin.com/in/donald-masine-17a430270/'},
-  {icon: FaWhatsapp, to: 'https://wa.me/27647266704'},
+    {icon: FaLinkedin, to: 'https://www.linkedin.com/in/donald-masine-17a430270/'},
+    {icon: FaWhatsapp, to: 'https://wa.me/27647266704'},
   ]
 
   const skills = [
@@ -56,10 +106,19 @@ const Hero = () => {
     {
       icon: SiPython,
       label: 'Python'
+    },
+    {
+      icon: Braces,
+      label: 'Java'
+    },
+    {
+      icon: SiCplusplus,
+      label: 'C++'
     }
   ]
   return (
-    <section className='relative min-h-[80vh] flex items-center overflow-hidden'>
+    <div>
+    <section id='home' className='relative min-h-screen flex items-center overflow-hidden'>
         {/* Background */}
         <div className="absolute inset-0 bg-transparent">
           {/* <img /> Animate the background */}
@@ -90,7 +149,7 @@ const Hero = () => {
               <div className=" flex animate-fade-in bg-surface rounded-full items-center justify-center">
                 <span className='inline-flex items-center gap-2 px-4 py-2 rounded-full'>
                   <span className='w-2 h-2 bg-primary rounded-full animate-pulse'/>
-                  Software Developer
+                  Graduate Software Developer
                 </span>
               </div>
 
@@ -113,8 +172,8 @@ const Hero = () => {
               </div>
               {/* Call to action buttons*/}
               <div className="flex gap-4 animate-fade-in animation-delay-300">
-                <button className='flex item-center justify-center gap-2 rounded-full py-2 px-4 bg-[#00ffff] cursor-pointer'><Phone />Contact Me</button>
-                <button className='flex item-center justify-center gap-2 rounded-full py-2 px-4 cursor-pointer border border-[#00ffff]'>
+                <button onClick={() => scrollToSection('contact', '#contact')} className='flex item-center justify-center gap-2 rounded-full py-2 px-4 bg-[#00ffff] hover:scale-110 cursor-pointer'><Phone />Contact Me</button>
+                <button onClick={handleDownloadCV} className='flex item-center justify-center gap-2 rounded-full py-2 px-4 cursor-pointer border border-[#00ffff] hover:scale-110'>
                   {/* TODO: Animate the border */}
                   <Download />Download CV
                 </button>
@@ -157,7 +216,7 @@ const Hero = () => {
                 {[...skills, ...skills].map((skill, index)=>(
                   <div key={index} className='flex-shrink-0 px-8 py-4 hover:scale-110'>
                     <span className='text-2xl font-semibold text-muted-foreground hover:text-white transition-all duration-300'>{< skill.icon />}</span>
-                    <p className='text-sm text-center text-muted-foreground'>{skill.label}</p>
+                    <p className='text-sm text-center text-muted-foreground '>{skill.label}</p>
                   </div>
                 ))}
               </div>
@@ -165,6 +224,13 @@ const Hero = () => {
           </div>
         </div>
     </section>
+
+        <About />
+        <Experience />
+        <Projects />
+        <Contact />
+        <Footer />
+    </div>
   )
 }
 

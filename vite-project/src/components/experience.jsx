@@ -3,53 +3,44 @@ import React from 'react'
 const Experience = () => {
   const experiences = [
     {
-      period: "April 2022",
-      role: "Full Stack developer",
+      period: "April 2026",
+      role: "Backend developer",
       company: "DerivCo",
-      event: 'mini hackathon',
-      description: "Developing a fullstack project management application for developers",
-      technologies: ["React","TailwindCSS","Node.js", "Express.js","PostgreSQL"],
-      current: true
+      event: 'Mini Hackathon',
+      description: "Developed a fullstack automated seat allocation system, working in a group of four.",
+      technologies: ["JavaScript","React","TailwindCSS","Supabase", "PostgreSQL"],
+      current: false
     },
     {
-      period: "April 2022",
+      period: "April 2026",
       role: "Full Stack developer",
       company: "DerivCo",
-      event: 'mini hackathon',
-      description: "Developing a fullstack project management application for developers",
+      event: 'Skills Quest Challenge',
+      description: "Developed a fullstack project management application for developers.",
       technologies: ["React","TailwindCSS","Node.js", "Express.js","PostgreSQL"],
       current: false
     },
     {
-      period: "April 2022",
-      role: "Full Stack developer",
-      company: "DerivCo",
-      event: 'mini hackathon',
-      description: "Developing a fullstack project management application for developers",
-      technologies: ["React","TailwindCSS","Node.js", "Express.js","PostgreSQL"],
+      period: "November 2025",
+      role: "Frontend developer",
+      company: "Kion Consulting",
+      event: 'External Hackathon',
+      description: "Developed an AI-enhanced task management and performance tracker web application, working in a group of four.",
+      technologies: ["JavaScript","React","TailwindCSS","Supabase", "PostgreSQL"],
       current: false
-    },
-    {
-      period: "April 2022",
-      role: "Full Stack developer",
-      company: "DerivCo",
-      event: 'mini hackathon',
-      description: "Developing a fullstack project management application for developers",
-      technologies: ["React","TailwindCSS","Node.js", "Express.js","PostgreSQL"],
-      current: false
-    },
+    }
   ]
   return (
-    <section id='experiences' className='relative overflow-hidden mb-2'>
+    <section id='experiences' className='relative overflow-hidden mt-30'>
       <div className='absolute top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2'/>
       <div className="container mx-auto px-6 relative z-10">
         {/* Section header */}
-        <div className="leftColumn space-y-4">
+        <div className="text-center space-y-4">
           <div className="title flex items-center justify-center text-4xl md:text-5xl animate-fade-in text-secondary-foreground font-medium tracking-wider uppercase">
             <span>Experiences</span>
           </div>
-          <h2 className='flex items-center justify-center font-serif italic animate-fade-in animation-delay-100 text-white'>
-            A timeline of my  
+          <h2 className='font-serif italic animate-fade-in animation-delay-100 text-white'>
+            A timeline of my
            <span className='font-serif italic font-normal text-secondary-foreground'> career journey.</span>
           </h2>
         </div>
@@ -70,7 +61,7 @@ const Experience = () => {
                     <h3 className='text-xl font-semibold mt-2'>{x.company} - {x.event}</h3>
                     <p className='text-muted-foreground'>{x.role}</p>
                     <p className='text-sm text-muted-foreground mt-4'>{x.description}</p>
-                    <div className={`flex flex-wrap gap-6 mt-4 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
+                    <div className={`flex flex-wrap gap-2 mt-4 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
                       {x.technologies.map((xt,xtIndex)=>(
                         <span key={xtIndex} className='px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground'>{xt}</span>
                       ))}
