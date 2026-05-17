@@ -38,7 +38,7 @@ const Hero = () => {
   const handleDownloadCV = () => {
     try {
       // Create a link to the CV file in the same folder as Hero.jsx
-      const cvPath = 'http://localhost:5173/DonaldMasine-CurriculumVitae.pdf';
+      const cvPath = '/DonaldMasine-CurriculumVitae.pdf';
       
       // Create an anchor element
       const link = document.createElement('a');
@@ -195,7 +195,7 @@ const Hero = () => {
               <div className="relative max-w-md mx-auto ">
                 <div className='absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse'/>
                 <div className="relative rounded-3xl glow-border">
-                  <img src="../images/profile.png" alt="Masine Donald" className='w-full aspect-[4/5] object-cover rounded-2xl'/>
+                  <img src="/images/profile.png" alt="Masine Donald" className='w-full aspect-[4/5] object-cover rounded-2xl'/>
                   {/* Badges */}
                   <div className="absolute -bottom-6 -right-4 rounded-xl px-4 py-3 animate-float border border-primary bg-background">
                     <div className="flex items-center gap-3">

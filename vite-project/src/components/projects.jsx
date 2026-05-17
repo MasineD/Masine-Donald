@@ -10,7 +10,7 @@ const Projects = () => {
     {
       title: 'MzansiBuilds',
       description: 'Project management platform for developers. It allows users to keep track of their projects, view what projects other users are working on, and ask for collaboration.',
-      image: '../images/mzansiBuilds.jpg',
+      image: '/images/mzansiBuilds.jpg',
       technologies: ["React", "Tailwindcss", "Javascript", "Node.js", "Express.js", "PostgreSQL", "Vitest", "Postman"],
       link: "#",
       github: "https://github.com/MasineD/MzansiBuilds",
