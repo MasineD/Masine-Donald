@@ -12,7 +12,7 @@ const Projects = () => {
       description: 'Project management platform for developers. It allows users to keep track of their projects, view what projects other users are working on, and ask for collaboration.',
       image: '/images/mzansiBuilds.jpg',
       technologies: ["React", "Tailwindcss", "Javascript", "Node.js", "Express.js", "PostgreSQL", "Vitest", "Postman"],
-      link: "#",
+      link: "https://mzansi-builds-v2s9.onrender.com/",
       github: "https://github.com/MasineD/MzansiBuilds",
       role: "Full Stack developer"
     }
