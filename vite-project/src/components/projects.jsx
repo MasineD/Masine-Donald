@@ -70,7 +70,7 @@ const Projects = () => {
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 pt-2 pb-2 border-b">
-                  {currentProject.technologies.slice(0, 3).map((tech, idx) => (
+                  {currentProject.technologies.map((tech, idx) => (
                     <span key={idx} className="px-3 py-1 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground">
                       {tech}
                     </span>
