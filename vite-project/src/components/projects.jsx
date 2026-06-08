@@ -15,6 +15,15 @@ const Projects = () => {
       link: "https://mzansi-builds-v2s9.onrender.com/",
       github: "https://github.com/MasineD/MzansiBuilds",
       role: "Full Stack developer"
+    },
+    {
+      title: 'Data Warehouse and ETL Pipeline',
+      description: 'Designed and implemented a relational SQL data warehouse to centralize and structure datasets. Engineered automated ETL processes for data ingestion, cleaning, transformation, and analytics-ready storage.',
+      image: '/images/SQLDataWarehouse.png',
+      technologies: ["MicroSoft SQL Server", "SQL"],
+      link: "https://github.com/MasineD/SQL-DataWarehouse-Project",
+      github: "https://github.com/MasineD/SQL-DataWarehouse-Project",
+      role: "Data Engineer"
     }
   ]
 
