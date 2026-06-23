@@ -8,6 +8,15 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'MzansiHealth',
+      description: 'A web-application to assist healthcare providers effectively follow up on patients adherence to treatment',
+      image: '/images/mzansiHealth.jpg',
+      technologies: ["React", "Tailwindcss", "Javascript", "Node.js", "Express.js", "PostgreSQL", "Vitest", "Postman"],
+      link: "https://mzansi-health.onrender.com/",
+      github: "https://github.com/MasineD/MzansiHealth",
+      role: "Full Stack developer"
+    },
+    {
       title: 'MzansiBuilds',
       description: 'Project management platform for developers. It allows users to keep track of their projects, view what projects other users are working on, and ask for collaboration.',
       image: '/images/mzansiBuilds.jpg',
