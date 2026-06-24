@@ -10,7 +10,7 @@ const Projects = () => {
     {
       title: 'UbuntuHealth',
       description: 'A web-application to assist healthcare providers effectively follow up on patients adherence to treatment',
-      image: '/images/ubuntuHealth.png',
+      image: '/images/mzansiHealth.png',
       technologies: ["React", "Tailwindcss", "Javascript", "Node.js", "Express.js", "PostgreSQL", "Vitest", "Postman"],
       link: "https://mzansi-health.onrender.com/",
       github: "https://github.com/MasineD/MzansiHealth",
