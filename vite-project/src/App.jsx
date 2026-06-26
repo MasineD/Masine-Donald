@@ -6,11 +6,13 @@ import About from './components/about'
 import Experience from './components/experience'
 import Projects from './components/projects'
 import Contact from './components/contact'
+import ThreeBackground from './components/ThreeBackground'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 const App = () => {
   return (
     <BrowserRouter>
+      <ThreeBackground />
       <Navbar />
       {/* Add padding-top to push content below fixed navbar */}
       <main className="pt-32"> {/* Adjust pt-32 based on navbar height */}

@@ -124,22 +124,7 @@ const Hero = () => {
           {/* <img /> Animate the background */}
         </div>
 
-        {/* Animation dots */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(30)].map((_, i) => (
-            <div key={i} className="absolute w-1.5 h-1.5 rounded-full opacity-60"
-              style={{
-                backgroundColor: "#00ffff",
-                left : `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animation: `slow-drift ${
-                  15 + Math.random() * 20
-                }s ease-in-out infinite`,
-                animationDelay: `${Math.random() * 5}s`
-              }}
-            />
-        ))}
-        </div>
+
 
         {/* Main content */}
         <div className="container mx-auto px-6 pt-1 pb-2 relative z-10">
